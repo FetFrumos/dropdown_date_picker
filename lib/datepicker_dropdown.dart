@@ -201,7 +201,7 @@ class _DropdownDatePickerState extends State<DropdownDatePicker> {
   late List<int> listdates = [];
   late List<int> listyears = [];
   late List<dynamic> listMonths = [];
-
+  late Color dropdownColor;
   @override
   void initState() {
     super.initState();
@@ -304,6 +304,7 @@ class _DropdownDatePickerState extends State<DropdownDatePicker> {
       default:
         listMonths = listMonths_en;
     }
+    dropdownColor = Theme.of(context).scaffoldBackgroundColor;
   }
 
   ///Month selection dropdown function
@@ -501,6 +502,7 @@ class _DropdownDatePickerState extends State<DropdownDatePicker> {
       icon: widget.icon ?? const Icon(Icons.expand_more, color: Colors.grey),
       value: monthselVal.isEmpty ? null : monthselVal,
       menuMaxHeight: widget.menuHeight,
+      dropdownColor: dropdownColor,
       onChanged: (value) {
         monthSelected(value);
       },
@@ -543,6 +545,7 @@ class _DropdownDatePickerState extends State<DropdownDatePicker> {
       icon: widget.icon ?? const Icon(Icons.expand_more, color: Colors.grey),
       value: yearselVal.isEmpty ? null : yearselVal,
       menuMaxHeight: widget.menuHeight,
+      dropdownColor: dropdownColor,
       onChanged: (value) {
         yearsSelected(value);
       },
@@ -577,6 +580,7 @@ class _DropdownDatePickerState extends State<DropdownDatePicker> {
       icon: widget.icon ?? const Icon(Icons.expand_more, color: Colors.grey),
       value: dayselVal.isEmpty ? null : dayselVal,
       menuMaxHeight: widget.menuHeight,
+      dropdownColor: dropdownColor,
       onChanged: (value) {
         daysSelected(value);
       },
